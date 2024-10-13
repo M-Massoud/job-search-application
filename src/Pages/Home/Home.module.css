@@ -1,0 +1,15 @@
+.home-page-container {
+  padding: 1.5rem 1.5rem;
+  background-color: #f2f2f2;
+}
+
+.home-page-container h2 {
+  font-size: 2rem;
+}
+
+.job-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
