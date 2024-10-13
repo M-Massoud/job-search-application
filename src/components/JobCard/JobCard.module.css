@@ -1,0 +1,27 @@
+.card-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  flex-basis: calc(50% - 0.75rem);
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.related-skills-title {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.related-skills-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.related-skills-list li {
+  list-style: none;
+  background-color: #c4c4c4;
+  color: #000;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
