@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import styles from './Home.module.css';
 import JobCard from '../../components/JobCard';
+import PageLayout from '../../components/Layout';
+import Search from '../../components/Search';
 
 type job = {
   id: string;
@@ -40,19 +42,22 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles['home-page-container']}>
-      <h2>All Jobs ({jobsMeta?.count})</h2>
-      <section className={styles['job-cards-container']}>
-        {jobsData.map(job => {
-          return (
-            <JobCard
-              key={job.id}
-              title={job.attributes.title}
-              skills={job.relationships.skills}
-            />
-          );
-        })}
-      </section>
-    </main>
+    <PageLayout>
+      <Search />
+      <main className={styles['home-page-container']}>
+        <h2>All Jobs ({jobsMeta?.count})</h2>
+        <section className={styles['job-cards-container']}>
+          {jobsData.map(job => {
+            return (
+              <JobCard
+                key={job.id}
+                title={job.attributes.title}
+                skills={job.relationships.skills}
+              />
+            );
+          })}
+        </section>
+      </main>
+    </PageLayout>
   );
 }

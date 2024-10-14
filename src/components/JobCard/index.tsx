@@ -25,6 +25,7 @@ type jobCardProps = {
 
 import { useState, useEffect } from 'react';
 import styles from './JobCard.module.css';
+import { Link } from 'react-router-dom';
 
 export default function JobCard({ title, skills }: jobCardProps) {
   const [skillsData, setSkillsData] = useState<skill[]>([]);
@@ -51,13 +52,14 @@ export default function JobCard({ title, skills }: jobCardProps) {
       <h4 className={styles['card-title']}>{title}</h4>
       <p className={styles['related-skills-title']}>Related Skills:</p>
       <ul className={styles['related-skills-list']}>
-        {skillsData.map(skill => {
-          return (
-            <li key={skill.data.skill.id}>{skill.data.skill.attributes.name}</li>
-          );
+        {skillsData.map(skillData => {
+          const { skill } = skillData.data;
+          return <li key={skill.id}>{skill.attributes.name}</li>;
         })}
       </ul>
-      {/* <a>View job details</a> */}
+      <Link to={'/test'} className={styles['job-details-link']}>
+        View Job details
+      </Link>
     </div>
   );
 }
