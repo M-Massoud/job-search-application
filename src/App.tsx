@@ -1,14 +1,16 @@
 import './App.css';
-import Header from './components/Header';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Search from './components/Search';
 import Home from './Pages/Home';
 
 function App() {
   return (
     <>
-      <Header />
-      <Search />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Navigate to={'/home'} />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
     </>
   );
 }
