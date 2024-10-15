@@ -43,7 +43,6 @@ export default function JobCard({ id, title, skills }: jobCardProps) {
       const skillsNamesPromises = skills.map(skill => fetchSkillData(skill.id));
       const fetchedSkills = await Promise.all(skillsNamesPromises);
       setSkillsData(fetchedSkills);
-      console.log(fetchedSkills);
     };
 
     fetchAllSkills();
