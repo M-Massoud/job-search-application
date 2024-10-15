@@ -17,6 +17,7 @@ type skill = {
 };
 
 type jobCardProps = {
+  id: string;
   title: string;
   skills: {
     id: string;
@@ -26,12 +27,13 @@ type jobCardProps = {
 import { useState, useEffect } from 'react';
 import styles from './JobCard.module.css';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../../../constants';
 
-export default function JobCard({ title, skills }: jobCardProps) {
+export default function JobCard({ id, title, skills }: jobCardProps) {
   const [skillsData, setSkillsData] = useState<skill[]>([]);
 
   const fetchSkillData = async (id: string): Promise<skill> => {
-    const response = await fetch(`https://skills-api-zeta.vercel.app/skill/${id}`);
+    const response = await fetch(`${API_URL}/skill/${id}`);
     const data = await response.json();
     return data;
   };
@@ -57,7 +59,7 @@ export default function JobCard({ title, skills }: jobCardProps) {
           return <li key={skill.id}>{skill.attributes.name}</li>;
         })}
       </ul>
-      <Link to={'/test'} className={styles['job-details-link']}>
+      <Link to={`/job/${id}`} className={styles['job-details-link']}>
         View Job details
       </Link>
     </div>
