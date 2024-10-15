@@ -9,3 +9,7 @@ body {
 .card {
   padding: 2em;
 }
+
+.bold {
+  font-weight: bold;
+}

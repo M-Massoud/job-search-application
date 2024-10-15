@@ -1,0 +1,27 @@
+.job-page-container {
+  background-color: #f2f2f2;
+  padding: 1.5rem;
+}
+
+.main-content-container {
+  padding-top: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.aside-section {
+  background-color: #d9d9d9;
+  padding: 1.5rem;
+  flex-basis: 20%;
+}
+
+.related-skills-section {
+  background-color: #f0f0f0;
+  background-color: white;
+  padding: 1.5rem;
+  flex: 1 0 75%;
+}
+
+.related-skills-cards {
+  padding-top: 1.5rem;
+}

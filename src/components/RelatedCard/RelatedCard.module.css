@@ -1,0 +1,11 @@
+.related-card-container {
+  padding: 1.5rem;
+  background-color: #f0f0f0;
+  margin-bottom: 1.5rem;
+}
+
+.related-card-meta {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+}
