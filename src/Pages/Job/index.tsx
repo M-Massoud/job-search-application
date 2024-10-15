@@ -25,7 +25,6 @@ export default function JobPage() {
     try {
       const response = await fetch(`${API_URL}/job/${id}`);
       const data = await response.json();
-      console.log('here we go', data);
       setJobData(data.data.job);
     } catch (err) {
       console.log(err);
