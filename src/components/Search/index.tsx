@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Search.module.css';
 import { API_URL } from '../../../constants';
-import { debounce } from 'lodash';
+import { debounce, DebouncedFunc } from 'lodash';
 
 type SearchProps = {
   fetchJobsData?: (url: string) => void;
@@ -10,7 +10,9 @@ type SearchProps = {
 export default function Search({ fetchJobsData }: SearchProps) {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const debouncedFetchJobs = useRef<((query: string) => void) | null>(null);
+  const debouncedFetchJobs = useRef<DebouncedFunc<(query: string) => void> | null>(
+    null
+  );
 
   useEffect(() => {
     debouncedFetchJobs.current = debounce((query: string) => {
