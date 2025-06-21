@@ -48,10 +48,10 @@ export default function JobPage() {
               })}
             </div>
           </section>
-          <aside className={styles['aside-section']}>
+          {/* <aside className={styles['aside-section']}>
             <h3>Related Jobs:</h3>
             <ul></ul>
-          </aside>
+          </aside> */}
         </div>
       </main>
     </PageLayout>

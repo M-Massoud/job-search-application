@@ -10,8 +10,6 @@ export default function Header() {
           <Link to="/home" style={{ color: 'black', fontWeight: 'normal' }}>
             <li>Home</li>
           </Link>
-          <li>Search</li>
-          <li>History</li>
         </ul>
       </nav>
     </header>
