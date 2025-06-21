@@ -1,6 +1,7 @@
 # Job Search Application
 
 A modern job search application built with **React**, **TypeScript**. Search for jobs, view job details, and explore related skills using a clean and responsive UI.
+**[Live Demo](https://work-search.netlify.app)**
 
 ## Features
 
